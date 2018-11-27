@@ -7,6 +7,8 @@ import projectRoute  from './app/routes/project.route'
 
 import authMiddleware from './app/middlewares/auth'
 
+// import 'babel-polyfill';
+
 const app = express()
 
 app.use(bodyParser.json())
@@ -20,6 +22,6 @@ app.use(cors())
 app.use('/auth', userRoute(app))
 app.use('/projects', authMiddleware, projectRoute(app))
 
-app.listen(5001, () => console.log('Servidor rodando'))
+app.listen(5001, () => console.log('Servidor rodando '))
 
 export default app
